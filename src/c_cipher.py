@@ -21,7 +21,7 @@ def encrypt(email="abc012"):
     #     enum_flag = A or B
     anum_flag = email[:3] != 'abc' or email[3:] != '012' 
 
-    if len_flag:                         # NOTE: here we provide input validation on length
+    if len_flag:                         # NOTE: here we provide input validation on length 
         output = "Length check failed\n"
         output += "Email must be 6 characters long."
         logging.info(output)
