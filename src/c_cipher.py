@@ -28,7 +28,7 @@ def encrypt(email):
     #     A = email[:3] (check first half)
     #     B = email[3:] (check second half)
     #     enum_flag = A or B
-    anum_flag = email[:3] != 'abc' or email[3:] != '012' 
+    anum_flag = not email[:3].isalpha() or not email[3:].isdecimal() 
 
     if len_flag:                         # NOTE: here we provide input validation on length 
         output = "Length check failed\n"
@@ -42,7 +42,7 @@ def encrypt(email):
         return output     
         
     # TODO: fix line below, process our string into a list
-    email_lst = email[0] + email[1] + email[2] + email[3] + email[4] + email[5]
+    email_lst = [email[0], email[1], email[2], email[3], email[4], email[5]]
         
     # TODO: complete line(s) below, convert EACH new element into a string
     new_ascii = ord(email_lst[0]) + 3    # NOTE: here we extract and update element at 0 
@@ -91,7 +91,7 @@ def decrypt(email="def345"):
     # keep all updates in the anum_flag (bool) variable
     # i.e., 
 
-    email_lst = email[0] + email[1] + email[2] + email[3] + email[4] + email[5]
+    email_lst = [email[0], email[1], email[2], email[3], email[4], email[5]]
     
     old_ascii = ord(email_lst[0]) - 3
     email_lst[0] = chr(old_ascii)
