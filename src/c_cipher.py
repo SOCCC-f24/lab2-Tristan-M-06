@@ -74,7 +74,7 @@ def encrypt(email):
     retVal = email_str
     return retVal 
 
-def decrypt(email="def345"):
+def decrypt(email):
     """
     TODO: What is the objective? 
 
